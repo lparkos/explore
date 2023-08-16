@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Other meta tags, title, etc. -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="main.js"></script>
+        <!-- Other meta tags, title, etc. -->
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    </head>
+<body>
+<!--
+README!
+
+GAME INSRUCTIONS:
+
+p    - pause
+ESC  - abandon game
+
+Click the big P to choose one of three levels:
+- Casual
+- Medium
+- Hard
+
+The game will save your stats locally, via localStorage.
+Click the F to see your stats.
+
+Click I for these intructions.
+
+Flip is a timed card memory game. When starting a level, there's a red bar on top of the screen that shows how much time you have left.
+Click the green cards to see what symbol they uncover and try to find the matching symbol underneath the other cards.
+Uncover two matching symbols in a row to eliminate them from the game.
+Eliminate all cards as fast as you can to win the game. Have fun FLIPing!
+-->
+
+
+<div id="g"></div>
+<div class="container">
+<div class="row">
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">General Painpoints</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the top feature app developers ask for in their platform?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ Comprehensive Documentation</p>
+            <p>If you could magically have 1 new feature in your platform, what would it be? What would it solve?</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Adoption</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the number 1 reason people chose Tanzu?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ Modern Application Development</p>
+            <p>Why would your team want to use Tanzu? What would prevent it?</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Onboarding</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the average time it takes someone to onboard to a new codebase?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ 3-9 Months</p>
+            <p>How quickly does it take you to onboard to a new code base and get started writing? What makes a great onboarding experience?</p>
+            <p>What are some other ways that you get going with onboarding other than documentation and onboarding programs</p>
+            <p>As an Application Developer how often do you find yourself needing to manage configuration & ideally what would the ratio between that and coding be?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">CVE & Security</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the average time it takes someone to onboard to a new codebase?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ Broken Access Control</p>
+            <p>⛔️ Injection</p>
+            <p>⛔️ Outdated Components</p>
+            <p>How quickly does it take you to onboard to a new code base and get started writing? What makes a great onboarding experience?</p>
+            <p>What are some other ways that you get going with onboarding other than documentation and onboarding programs</p>
+            <p>As an Application Developer how often do you find yourself needing to manage configuration & ideally what would the ratio between that and coding be?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Documentation</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What percentage of developers write their own documentation?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ 82%</p>
+            <p>What do you dislike most about your company's documentation? What do you think is really awesome?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Platform Observability & Management</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the software engineering practice that unifies software operations with software development?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ DevOps</p>
+            <p>Do you use a portal for your developers?</p>
+            <p>When and why do you prefer the CLI over GUI?</p>
+            <p>How do you manage your developers, documentation, handle observability, set up guardrails and communication process? If App Dev, how are you managed by you PE in these ways?</p>
+          </div>   
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Deployment Process</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What American Software Engineer coined the term Continuous Integration?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ Grady Brooch</p>
+            <p>⛔️ Linus Torvalds</p>
+            <p>⛔️ Richard Stallman</p>
+            <p>What would you do to improve your  deployment processes?</p>
+            <p> Do you feel you have the level of autonomy that allows you to perform most efficiently in your role?</p>
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Custom Tooling</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What was the first open source project ever written?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ The first example of free and open-source software is believed to be the A-2 system, developed at the UNIVAC division of Remington Rand in 1953,[6] which was released to customers with its source code.</p>
+            <p>What are you using to build your apps right now? (bonus: name apps/services)</p>
+            <p>What is most helpful whenever you are troubleshooting?</p>
+            <p>Is there an upgrade process that you find painful?</p>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Path to Production</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What was the first open source project ever written?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ The first example of free and open-source software is believed to be the A-2 system, developed at the UNIVAC division of Remington Rand in 1953,[6] which was released to customers with its source code.</p>
+            <p>What are you using to build your apps right now? (bonus: name apps/services)</p>
+            <p>What is most helpful whenever you are troubleshooting?</p>
+            <p>Is there an upgrade process that you find painful?</p>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Kubernetes</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>What is the command to create a Kubernetes service?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ Kubectl expose</p>
+            <p>⛔️ Kubectl deploy</p>
+            <p>⛔️ Kubectl run</p>
+            <p>Tell me about your k8s experience...</p>
+          </div>         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left">
+    <div class="flipper">
+      <div class="f c1">Cost Metrics</div>
+      <div class="b contentbox">
+        <div class="padded">
+          <h2>On average, how much time do you think developers spend coding per day?</h2>
+          <a href="javascript:;" class="reveal">Host Questions</a>
+          <div class="host-q show">
+            <p>⭐️ 2 hours per day</p>
+            <p>⛔️ 5 hours per day</p>
+            <p>⛔️ 30 minutes per day</p>
+            <p>How do you see Platform engineering in relation to your current “DevOps” strategy?</p>
+            <p>Who and how often and what metrics for cost do you track?</p>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card left blank-box">
+    <div class="f c1">
+    <div class="blank-box">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#78BE20;}
+	.st1{fill:#1D428A;}
+	.st2{fill:#00C1D5;}
+	.st3{fill:#0091DA;}
+</style>
+<g>
+	<path class="st0" d="M394.3,264.7L299.2,384l-7.8-16.3l85.4-107L394.3,264.7z M108.6,367.7l-85.4-107l-17.6,4L100.8,384
+		L108.6,367.7z"/>
+	<path class="st1" d="M0,239.9L34,91.1l14.1,11.2L17.6,235.8L0,239.9z M400,239.9l-34-148.8l-14.1,11.2l30.5,133.5L400,239.9z"/>
+	<path class="st2" d="M268.5,378.7H131.5l-7.8,16.3h152.6L268.5,378.7z M336,82.5L212.7,23.1V5l137.5,66.2L336,82.5z M187.3,5
+		L49.8,71.2L64,82.5l123.3-59.4V5z"/>
+	<path class="st3" d="M267.8,347.7H132.2l-84.5-106l30.2-132.2L200,50.8l122.1,58.8l30.2,132.2L267.8,347.7z M139.9,331.7h120.1
+		l74.9-93.9l-26.7-117.1L200,68.5L91.8,120.7L65,237.8L139.9,331.7z"/>
+</g>
+</svg>
+</div>
+    </div>
+  </div>
+</div>
+</div> 
+
+</body>
+</html>
