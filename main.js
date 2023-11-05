@@ -49,6 +49,11 @@ $(function(){
         event.stopPropagation(); 
         $('.host-q').toggleClass('show');
       });
+
+      $('.reveal-research').on('click', function(){
+        event.stopPropagation(); 
+        $('.research-q').toggleClass('show');
+      });
   
     // Start game
     $('.play').on('click', function(){
