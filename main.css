@@ -9,10 +9,8 @@ body, html{margin:0;
 	-ms-user-select: none;
 	user-select: none;
     font-family: 'Work Sans', sans-serif;
-    height:100vh;
-    overflow:hidden;
 }
-body, html, .flipper, .f, .b, #g {width:100%;font-family: 'Work Sans', sans-serif;}
+body, html, .flipper, .f, .b, #g {width:100%;height:100%;font-family: 'Work Sans', sans-serif;}
 
 a {
     text-decoration: underline;
