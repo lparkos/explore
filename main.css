@@ -25,7 +25,6 @@ a {
     bottom: 1vh;
     text-align: left;
     background-color: white;
-    z-index: 10;
 }
 a:hover{;background:rgba(255, 255, 255, .5)}
 
@@ -113,7 +112,7 @@ svg {
     font-weight: bold;
     line-height: 2vw;
 }
-.row .contentbox p{line-height:14px;margin:14px 0;color: black; line-height: 4vw;}
+.row .contentbox p{line-height:14px;margin:14px 0;color: black;}
 
 
 .row .info{font-size:11px;line-height:16px;text-align:center;color: rgba(255,255,255, .3);padding:0 25px;}
@@ -138,9 +137,9 @@ position:absolute;top:50%;margin-top:-50px;width:100%;text-align:center}
 /* flip cards */
 .flipper {position:relative;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d}
 .f, .b {position:absolute;top:0;left:0;box-shadow:inset 0 0 0 1px #333;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden}
-.f {background:#ffffff;z-index:1;background-image: url(https://www.vmware.com/content/dam/digitalmarketing/events/vmware-explore/2023/global/VMW-Explore-Heros-RAYAN.png); background-size: cover;}
+.f {background:#ffffff;z-index:1;background-image: url(https://www.vmware.com/content/dam/digitalmarketing/events/vmware-explore/2023/global/VMW-Explore-Heros-RAYAN.png);}
 .b {background:#d2d9e8;opacity:0}
-.card.active .b{opacity:1}
+.card.active .b{z-index:2;opacity:1}
 
 /*Grouped for easy prefixing*/
 .card, .flipper, .row .b{transition:400ms;-ms-transition:400ms;-webkit-transition:400ms;-moz-transition:400ms;-o-transition:400ms}
