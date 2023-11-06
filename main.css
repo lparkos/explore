@@ -1,5 +1,6 @@
 body, html{margin:0;
     background:white;
+    overflow:hidden;
     color:#1d428a;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
