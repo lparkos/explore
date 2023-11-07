@@ -44,16 +44,19 @@ $(function(){
       if( $(e.target).is('.playnow') ) { $('.row .card').last().addClass('active'); }
     });
 
-    // Expand Host Q
-    $('.reveal').on('click', function(){
-        event.stopPropagation(); 
-        $('.host-q').toggleClass('show');
-      });
 
-      $('.reveal-research').on('click', function(){
-        event.stopPropagation(); 
-        $('.research-q').toggleClass('show');
-      });
+    // Expand Host Q
+    $('.reveal').on('click', function(event){ // Added event here
+      event.stopPropagation(); 
+      event.preventDefault();
+      $('.host-q').toggleClass('show');
+  });
+  
+  $('.reveal-research').on('click', function(event){ // And here
+      event.stopPropagation(); 
+      event.preventDefault();
+      $('.research-q').toggleClass('show');
+  });
   
     // Start game
     $('.play').on('click', function(){

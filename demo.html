@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Card Example</title>
+<style>
+/* Container for the flip card */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /* Remove this if you don't want a 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+  pointer-events: none; /* Disable pointer events on the inner container */
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  pointer-events: all; /* Enable pointer events on the sides */
+}
+
+/* Style the front side */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2; /* Front side should be on top when not flipped */
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1; /* Back side should not be seen when not flipped */
+}
+
+#answer {
+  display: none; /* Initially hide the answer */
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style for the button */
+.flip-card-back button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+}
+</style>
+</head>
+<body>
+
+<!-- The flip card container -->
+<div class="flip-card" id="card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h1>Front Side</h1>
+      <p>Click to flip</p>
+    </div>
+    <div class="flip-card-back">
+      <h1>Back Side</h1>
+      <button id="toggleAnswer">Show/Hide Answer</button>
+      <div id="answer">Answer</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get the flip card container and the button
+var card = document.getElementById('card');
+var toggleAnswerBtn = document.getElementById('toggleAnswer');
+var answerDiv = document.getElementById('answer');
+
+// Toggle the flip class on click for the card
+card.addEventListener('click', function () {
+  // We only want to flip if the card itself is clicked, not the button
+  if (event.target === card || event.target === card.querySelector('.flip-card-front') || event.target === card.querySelector('.flip-card-back')) {
+    card.classList.toggle('flip');
+  }
+});
+
+// Toggle the answer display on click for the button
+toggleAnswerBtn.addEventListener('click', function (event) {
+  // Prevent the card flip event from firing
+  event.stopPropagation();
+  // Toggle the visibility of the answer div
+  if (answerDiv.style.display === 'none') {
+    answerDiv.style.display = 'block';
+  } else {
+    answerDiv.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
